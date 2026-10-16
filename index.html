@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iron Fronts: WW2 Grand Strategy</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="map"></canvas>
+
+<div id="topbar" class="hidden">
+  <button id="tb-leader" title="Politics (L)"></button>
+  <div id="tb-country"></div>
+  <div class="tb-stats" id="tb-stats"></div>
+  <div class="tb-spacer"></div>
+  <div id="tb-time">
+    <div id="tb-date"></div>
+    <div id="tb-speed"></div>
+  </div>
+</div>
+
+<nav id="menubar" class="hidden"></nav>
+<aside id="panel" class="hidden"></aside>
+<aside id="side" class="hidden"></aside>
+<div id="unitbar" class="hidden"></div>
+<div id="log" class="hidden"></div>
+<div id="mapmodes" class="hidden"></div>
+<div id="tooltip" class="hidden"></div>
+<div id="popups"></div>
+<div id="modal" class="hidden"><div id="modal-box"></div></div>
+<div id="hint" class="hidden"></div>
+
+<div id="start">
+  <div class="start-box">
+    <h1>IRON FRONTS</h1>
+    <h2>A World War II Grand Strategy Game &mdash; 1 January 1936</h2>
+    <div id="start-majors"></div>
+    <div class="start-row">
+      <label>Or choose any nation: <select id="start-minor"></select></label>
+      <span class="muted">You can also click a country on the map.</span>
+    </div>
+    <div id="start-selected"></div>
+    <div class="start-row">
+      <label><input type="checkbox" id="opt-hist" checked> Historical events (Anschluss, Fall Weiss, Barbarossa, Pearl Harbor...)</label>
+    </div>
+    <div class="start-row">
+      <button id="btn-start" class="big">Play</button>
+      <button id="btn-load" class="big ghost">Load Game</button>
+    </div>
+    <p class="muted small">Controls: drag to pan, mouse-wheel to zoom. Left-click your units to select (Shift/Ctrl+drag to box-select), right-click a province to move or attack. Space pauses, +/- change speed.</p>
+  </div>
+</div>
+
+<script src="js/data/world.js"></script>
+<script src="js/data/countries.js"></script>
+<script src="js/data/units.js"></script>
+<script src="js/data/tech.js"></script>
+<script src="js/data/events.js"></script>
+<script src="js/models.js"></script>
+<script src="js/portraits.js"></script>
+<script src="js/state.js"></script>
+<script src="js/sim.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/map.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
