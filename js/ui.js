@@ -599,7 +599,7 @@ const UI = (() => {
       if (b.dataset.a === 'x') clearSelection();
       else if (b.dataset.a === 'halt') { for (const d of divs) if (d.state === 'move') { d.path = []; d.state = 'idle'; } renderUnitBar(); }
       else if (b.dataset.a === 'inv') setInvasion(!UIState.invasionMode);
-      else if (b.dataset.a === 'disband') { if (confirm(`Disband ${divs.length} division(s)? Equipment returns to the stockpile.`)) { for (const d of divs) { for (const e2 in d.stats.eq) c.stockpile[e2] += Math.floor(d.stats.eq[e2] * d.str * 0.8); removeDivision(d); } clearSelection(); } }
+      else if (b.dataset.a === 'disband') { { log(`Disbanded ${divs.length} division(s); equipment returned to the stockpile.`, 'info'); for (const d of divs) { for (const e2 in d.stats.eq) c.stockpile[e2] += Math.floor(d.stats.eq[e2] * d.str * 0.8); removeDivision(d); } clearSelection(); } }
     };
     el.onchange = e => { if (e.target.dataset.a === 'tpl' && e.target.value) { const t = c.templates.find(x => x.id === +e.target.value); for (const d of divs) { d.tplId = t.id; d.stats = t.stats; d.str *= 0.7; d.org = Math.min(d.org, t.stats.org) * 0.5; } log(`${divs.length} division(s) reorganized as ${t.name}.`, 'good'); renderUnitBar(); } };
   }

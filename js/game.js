@@ -19,7 +19,7 @@ const Game = (() => {
       wars: [...G.wars], factions: Object.values(G.factions).map(f => ({ ...f, members: [...f.members] })), guarantees: G.guarantees,
       fired: [...G.firedEvents], log: G.log.slice(0, 50),
     };
-    try { localStorage.setItem('ww2-save-' + slot, JSON.stringify(s)); return true; } catch (e) { alert('Save failed: ' + e.message); return false; }
+    try { localStorage.setItem('ww2-save-' + slot, JSON.stringify(s)); return true; } catch (e) { log('Save failed: ' + e.message, 'bad'); return false; }
   }
   function hasSave(slot = 'quick') { try { return !!localStorage.getItem('ww2-save-' + slot); } catch (e) { return false; } }
   function load(slot = 'quick') {
